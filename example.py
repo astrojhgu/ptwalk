@@ -18,11 +18,15 @@ lp=rosenbrock
 ensemble=[normal(size=ndims) for i in range(10)]
 ensemble=[np.array(x) for x in ensemble]
 logprob_list=[lp(x) for x in ensemble]
+
 param=ptwalk.TWalkParam()
 param.pphi=0.5
+
 thin=100
+
 xlist=[]
 ylist=[]
+
 for i in range(100000):
     ptwalk.sample(lp, ensemble, logprob_list, param)
     if i%thin==0:
