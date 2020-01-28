@@ -23,7 +23,7 @@ def all_different(x1, x2):
     return np.all(x1!=x2)
 
 def gen_phi(n, pphi):
-    return uniform(size=n)<0.5
+    return uniform(size=n)<pphi
 
 def sqr_norm(x):
     return np.sum(x**2)
