@@ -14,8 +14,10 @@ def normal_dist(x):
     return -sum(x**2/2.0)
 
 ndims=2
+nwalkers=10
+
 lp=rosenbrock
-ensemble=[normal(size=ndims) for i in range(10)]
+ensemble=[normal(size=ndims) for i in range(nwalkers)]
 ensemble=[np.array(x) for x in ensemble]
 logprob_list=[lp(x) for x in ensemble]
 
